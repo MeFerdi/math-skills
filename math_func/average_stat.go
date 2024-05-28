@@ -1,4 +1,6 @@
-package statmath
+package main
+
+import "fmt"
 
 func Average(data []int) float64 {
 	var sum int
@@ -6,4 +8,10 @@ func Average(data []int) float64 {
 		sum += value
 	}
 	return float64(sum) / float64(len(data))
+}
+
+func main() {
+	set_val := []int{12, 13, 74, 123, 11234}
+
+	fmt.Println(Average(set_val))
 }

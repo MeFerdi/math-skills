@@ -22,7 +22,14 @@ func main() {
 	}
 
 	average := statmath.Average(data)
+	median := statmath.Median(data)
+	variance := statmath.Variance(data)
+	standardDeviation := statmath.StandardDeviation(data)
+
 	fmt.Printf("Average: %.0f\n", average)
+	fmt.Printf("Median: %.0f\n", median)
+	fmt.Printf("Variance: %.0f\n", variance)
+	fmt.Printf("Standard Deviation: %.0f\n", standardDeviation)
 }
 
 func readDataFromFile(filePath string) ([]int, error) {
