@@ -3,13 +3,14 @@ package main
 import (
 	"bufio"
 	"fmt"
-	statmath "math_func/statmath"
 	"os"
 	"strconv"
+
+	"statmath/statmath"
 )
 
 func main() {
-	if len(os.Args) < 2 {
+	if len(os.Args) != 2 {
 		fmt.Println("Please provide a file path as an argument.")
 		return
 	}
@@ -23,26 +24,26 @@ func main() {
 
 	average := statmath.Average(data)
 	median := statmath.Median(data)
-	variance := statmath.Variance(data)
-	standardDeviation := statmath.StandardDeviation(data)
+	// variance := statmath.Variance(data)
+	// standardDeviation := statmath.StandardDeviation(data)
 
 	fmt.Printf("Average: %.0f\n", average)
 	fmt.Printf("Median: %.0f\n", median)
-	fmt.Printf("Variance: %.0f\n", variance)
-	fmt.Printf("Standard Deviation: %.0f\n", standardDeviation)
+	// fmt.Printf("Variance: %.0f\n", variance)
+	// fmt.Printf("Standard Deviation: %.0f\n", standardDeviation)
 }
 
-func readDataFromFile(filePath string) ([]int, error) {
+func readDataFromFile(filePath string) ([]float64, error) {
 	file, err := os.Open(filePath)
 	if err != nil {
 		return nil, err
 	}
 	defer file.Close()
 
-	var data []int
+	var data []float64
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		value, err := strconv.Atoi(scanner.Text())
+		value, err := strconv.ParseFloat(scanner.Text(), 64)
 		if err != nil {
 			return nil, err
 		}

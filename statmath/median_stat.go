@@ -1,7 +1,7 @@
-package main
+package statmath
 
 import (
-	"fmt"
+	"math"
 )
 
 func Median(numbers []float64) float64 {
@@ -17,14 +17,13 @@ func Median(numbers []float64) float64 {
 	}
 
 	if n%2 == 0 {
-		return (numbers[n/2-1] + numbers[n/2]) / 2
+		median := (numbers[n/2-1] + numbers[n/2]) / 2
+		if median-math.Floor(median) >= 0.5 {
+			return math.Ceil(median)
+		} else {
+			return math.Floor(median)
+		}
 	} else {
-		return numbers[n/2]
+		return float64(int(numbers[n/2]))
 	}
-}
-
-func main() {
-	numbers := []float64{3, 5, 2, 9, 4}
-	median := Median(numbers)
-	fmt.Printf("Median: %.2f\n", median)
 }
