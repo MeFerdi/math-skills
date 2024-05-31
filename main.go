@@ -6,7 +6,7 @@ import (
 	"os"
 	"strconv"
 
-	"statmath/statmath"
+	statmath "statmath/statmath"
 )
 
 func main() {
@@ -24,13 +24,12 @@ func main() {
 
 	average := statmath.Average(data)
 	median := statmath.Median(data)
-	// variance := statmath.Variance(data)
-	// standardDeviation := statmath.StandardDeviation(data)
-
+	variance := statmath.Variance(data)
+	standarddeviation := statmath.StandardDeviation(data)
 	fmt.Printf("Average: %.0f\n", average)
 	fmt.Printf("Median: %.0f\n", median)
-	// fmt.Printf("Variance: %.0f\n", variance)
-	// fmt.Printf("Standard Deviation: %.0f\n", standardDeviation)
+	fmt.Printf("Variance: %.0f\n", variance)
+	fmt.Printf("Standard deviation: %.0f\n", standarddeviation)
 }
 
 func readDataFromFile(filePath string) ([]float64, error) {

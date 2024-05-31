@@ -4,24 +4,23 @@ import (
 	"math"
 )
 
-func StandardDeviation(numbers []int) float64 {
-	avg := AverageNum(numbers)
-	variance := VarianceInt(numbers, avg)
-	return math.Sqrt(float64(variance))
-}
-
-func VarianceInt(numbers []int, mean int) int {
-	sum := 0
-	for _, num := range numbers {
-		sum += int(math.Pow(float64(num-mean), 2))
+func StandardDeviation(data []float64) float64 {
+	n := float64(len(data))
+	if n == 0 {
+		return 0
 	}
-	return sum / len(numbers)
-}
 
-func AverageNum(numbers []int) int {
-	sum := 0
-	for _, num := range numbers {
-		sum += num
+	var mean float64
+	for _, value := range data {
+		mean += value
 	}
-	return sum / len(numbers)
+	mean /= n
+
+	var variance float64
+	for _, value := range data {
+		variance += (value - mean) * (value - mean)
+	}
+	variance /= n
+
+	return math.Sqrt(variance)
 }
