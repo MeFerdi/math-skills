@@ -148,8 +148,6 @@ What did you learn while building this project? What challenges did you face and
 
 ***Documentation***: I learned the importance of documenting code and projects. This includes writing clear and concise comments and creating a README.md file that provides instructions on how to use the project.
 
-***Collaboration***: I learned the importance of collaboration and communication in software development. This includes using version control systems like Git and communicating with other developers through issues and pull requests.
-
 #### Challenges and Solutions
 
 > - ****Calculating Median****: Calculating the median of a set of numbers was a challenge. I overcame this by implementing a simple sorting algorithm to find the middle value.

@@ -16,9 +16,19 @@ func main() {
 	}
 
 	filePath := os.Args[1]
+	if _, err := os.Stat(filePath); os.IsNotExist(err) {
+		fmt.Println("File not found.")
+		return
+	}
+
 	data, err := readDataFromFile(filePath)
 	if err != nil {
 		fmt.Println("Error reading data from file:", err)
+		return
+	}
+
+	if len(data) == 0 {
+		fmt.Println("No data found in the file.")
 		return
 	}
 
