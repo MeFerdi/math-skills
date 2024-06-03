@@ -35,7 +35,8 @@ Run the project
 ```bash
   go run main.go data.txt
 ```
-
+ **Note**: You need to have data.txt file in math-skills directory before running the command: go run main.go data.txt
+ 
 ## Usage/Examples
 Data.txt content:
 
