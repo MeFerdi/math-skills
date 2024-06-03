@@ -36,7 +36,7 @@ Run the project
   go run main.go data.txt
 ```
  **Note**: You need to have data.txt file in math-skills directory before running the command: go run main.go data.txt
- 
+
 ## Usage/Examples
 Data.txt content:
 
@@ -60,13 +60,6 @@ Median:179
 Variance:50607
 
 Standard Deviation:225
-
-
-## Tech Stack
-
-**Backend- Console:**
-
- Golang
 
 ## Running Tests
 
