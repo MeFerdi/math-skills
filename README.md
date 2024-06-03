@@ -4,8 +4,6 @@
 A simple command-line tool written in Go that calculates the average, median, variance, and standard deviation of a set of numbers from a file.
 
 
-
-
 > ## Features
 
 
@@ -71,7 +69,6 @@ To run tests, run the following command
 ```bash
 go test -v
 ```
-
 
 ## Contributing
 
@@ -153,8 +150,6 @@ What did you learn while building this project? What challenges did you face and
 > - ****Code Readability: Maintaining code readability was a challenge****. I overcame this by following Go standard formatting rules and using clear and concise variable names.
 
 > - ****Testing****: Writing unit tests was a challenge. I overcame this by using Go's built-in testing library and writing tests for each function.
-
-
 
 ## Study Reference
 
