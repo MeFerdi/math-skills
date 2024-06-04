@@ -6,6 +6,7 @@ import (
 	"math"
 	"os"
 	"strconv"
+	"strings"
 
 	statmath "statmath/statmath"
 )
@@ -74,11 +75,20 @@ func readDataFromFile(filePath string) ([]float64, error) {
 	// Create a scanner to read the file
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		// Parse the value from the file
-		value, err := strconv.ParseFloat(scanner.Text(), 64)
+		// Get the line from the scanner
+		line := scanner.Text()
+
+		// Skip empty lines
+		if strings.TrimSpace(line) == "" {
+			continue
+		}
+
+		// Parse the value from the line
+		value, err := strconv.ParseFloat(line, 64)
 		if err != nil {
 			return nil, err
 		}
+
 		// Add the value to the data slice
 		data = append(data, value)
 	}
