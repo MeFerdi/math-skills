@@ -1,5 +1,5 @@
 
-# Simple Statistical Calculator
+# Simple Statistics Calculator
 
 A simple command-line tool written in Go that calculates the average, median, variance, and standard deviation of a set of numbers from a file.
 
